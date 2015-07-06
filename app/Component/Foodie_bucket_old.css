@@ -1,0 +1,88 @@
+.avatar {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    float:left;
+    margin-left: 30%;
+    margin-top: 20%;
+}
+
+.Food {
+    position: absolute;
+    width: 200px;
+    height: 120px;
+    background-color: #CB3729;
+    float: left;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+.name1 {
+    position: absolute;
+    width: 200px;
+    height: 120px;
+    background-color:#FE5140;
+    float: left;
+    margin: 5px;
+    padding: 5px;
+}
+.name2 {
+    position: absolute;
+    width: 200px;
+    height: 120px;
+    float: left;
+    margin: 5px;
+    padding: 5px;
+}
+
+.Food_description {
+    position: relative;
+    top: 120px;
+    width: 200px;
+    height: 100px;
+    background-color: white;
+    float: left;
+    margin: 5px;
+    padding: 5px;
+    font-size: x-small;
+
+}
+
+.sp {
+    float:left;
+    margin-top: 20%;
+    color: white;
+    padding-left: 5px;
+}
+
+.MainFoodieBucket{
+    height: 65%;
+}
+
+
+.table {
+    display: table;
+    width: 100%;
+}
+.row {
+    display: table-row;
+    width: 100%;
+}
+.cell {
+    display: table-cell;
+}
+@media screen and (max-width: 750px) {
+    .table{
+        display: block;
+    }
+    .cell {
+        display: block;
+    }
+    .row {
+        display: table-cell;
+        width: 50%;
+    }
+}
+
+
+

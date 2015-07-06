@@ -1,0 +1,202 @@
+#accordion{
+    padding-left:100px;
+    padding-right: 100px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background-color: #e9e9e9;
+    margin-top: 0%;
+}
+.dishName{
+text-decoration: none;
+}
+hr{
+    color: #efefef;
+}
+.contact{
+    background-color: #f0f0f0;
+    padding:1%;
+
+}
+.clrLawnGreen{
+    color: #58d369;
+}
+.colourCyan{
+    color:#56adff;
+}
+.font10px{
+    font-size:10px;
+}
+.font9px{
+    font-size:9px;
+}
+
+.font14px{
+    font-size:14px;
+}
+
+.colorGray{
+    color:darkgray;
+}
+
+.roundedIndex{
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    height: 6px;
+    width: 6px;
+    font-size: 12px;
+    background-color: #555555;
+    padding: 8px;
+    color: #f8f8f8;
+    overflow: hidden;
+}
+.badge{
+    width: 25px;
+    height: 25px;
+    padding: 6px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #484848;
+
+}
+
+a:focus {
+    color: #23527c;
+    text-decoration: none;
+}
+
+.journeyDetails{
+    background-color: #f6f6f6;
+    padding:10%;
+}
+
+.detailsDeck{
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:10px;
+    background-color: white;
+}
+
+.journeysNav{
+    color: tomato;
+}
+
+.dishImage{
+    width:380px;
+    height:230px;
+    vertical-align: top;
+}
+
+.directions{
+    padding: 10px;
+}
+
+.font11px{
+    font-size: 11px;
+}
+
+.description{
+    font-size: 11px;
+    color: #414141;
+    padding-right: 10%;
+    text-align: justify;
+}
+
+.contact{
+    background-color: #e0e0e0;
+}
+
+.resend{
+    color:#56adff;
+    font-size: 11px;
+    padding-left:3%;
+    padding-top:2%;
+}
+
+/*#navButtons td{
+    color: #fff3f6;
+    background-color: #8e8e8e;
+}*/
+/*
+@font-face {
+    font-family: MyFont;
+    src: url('../fonts/ProximaNova-LightItalic.otf');
+}*/
+.navPrev{
+    width: 120px;
+    float: left;
+    height: 40px;
+    background-color: #7f7f7f;
+    color: #ffffff;
+}
+.navNext{
+    width: 120px;
+    float: right;
+    height: 40px;
+    background-color: #7f7f7f;
+    color: #ffffff;
+}
+
+button:hover{
+    border: solid #fdffca;
+}
+
+.completed{
+    width: 260px;
+    height: 40px;
+    background-color: #e2e8e4;
+    border: none;
+}
+
+.markStatusStarted{
+    width: 260px;
+    height: 40px;
+    background-color:tomato;
+    color: #ffffff;
+    border: none;
+}
+
+.markStatusComplete{
+    width: 260px;
+    height: 40px;
+    background-color: #25c3ff;
+    color: #ffffff;
+    border: none;
+}
+.padding-left-130{
+    padding-left: 130px;
+}
+
+.status{
+    color: #bbbbbb;
+}
+
+.navNextDisabled{
+    width: 120px;
+    float: right;
+    height: 40px;
+    color: #c5c5c5;
+    background-color: #f1f1f1;
+    border: solid #c5c5c5;
+}
+
+.duration{
+    padding-right: 10%;
+    text-align:right;
+}
+
+.durationBtn{
+    width: 180px;
+    height: 40px;
+    background-color: #e2e8e4;
+    border: none;
+    text-align: center;
+}
+
+.followBtn{
+    width: 180px;
+    height: 40px;
+    background-color:tomato;
+    color: #ffffff;
+    border: none;
+}

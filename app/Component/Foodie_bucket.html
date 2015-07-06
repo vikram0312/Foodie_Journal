@@ -1,0 +1,54 @@
+<html lang="en" ng-app="myApp" ng-cloak>
+<head>
+    <style>
+        [ng\:cloak], [ng-cloak], .ng-cloak{
+            display:none !important;
+        }
+    </style>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="Component/Foodie_bucket.css">
+</head>
+<body style="background-color: #F2F2F2" class="container-fluid">
+<div class="MainFoodieBucket" >
+    <div class="hidden-xs hidden-sm">
+    <h3 style="text-align: center">Welcome! Choose a track to get started.</h3>
+</div>
+    <div class="hidden-md hidden-lg">
+        <div class="row col-xs-12 col-xs-offset-1">
+            <h3 style="text-align: center">Welcome!</h3>
+            </div>
+        <div class="row col-xs-12 col-xs-offset-1">
+            <h3 style="text-align: center">Choose a track to get started.</h3>
+        </div>
+    </div>
+<br><br>
+<div ng-controller="FoodieController" class="container-fluid" >
+            <div class="col-md-3 col-md-offset-0 col-xs-12 col-xs-offset-5" ng-repeat="x in cuisines">
+                <div class="upperDiv" id="{{x.countryName}}">
+                <a ng-click="clickable(x.countryName, x.status, x.time)">
+                        <div class="food"></div>
+                        <div class="name1" style="width: {{x.status* 2}}"></div>
+                        <div class="name2" >
+                            <img class="avatar" src="Component/{{x.countryName}}.png">
+                            <span class="sp">{{x.countryName}}<br><p>{{x.status}} %</p></span>
+                        </div>
+                </a>
+                </div>
+                <div class="Food_description">
+                        <div class="foodContent">{{x.desc}}
+                        <br/><br/>
+                        <span style="font-weight: bold;">Duration: {{x.time}}</span>
+                            </div>
+                </div>
+            </div>
+</div>
+</div>
+<!--<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/angular/angular.min.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="Foodie_bucket.js">
+
+
+</script>-->
+</body>
+</html>

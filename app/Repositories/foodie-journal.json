@@ -1,0 +1,481 @@
+{
+  "users": {
+    "singh": [
+      {
+        "Cuisine": "American",
+        "Description": "One characteristic of American cooking is the fusion of mulitple ethnic or regional approaches into completely new cooking styles.",
+        "Status": 0,
+        "Duration": "Duration: 3 weeks",
+        "Dishes": [
+          {
+            "Dish": "All-American Bacon Cheese Burger",
+            "Status": "Started",
+            "photos": "Repositories/picjumbo.com_foodiesfeed.com_DSC_0004.jpg",
+            "Instructions": "Go ahead and ask for ultimate Cheese Burger",
+            "Description": "Vegan pitchfork banjo, cold-pressed post ironic XOXO church-key. Salvia single-origin coffee 3 wolf moon typewriter you probably haven't heard of them freegan. Pitchfork cardigan 8-bit four loko banh mi Banksy. Pork belly meggings food truck keytar polaroid mustache, farm-to-table.",
+            "RestaurantList": [
+              {
+                "Name": "Frankies",
+                "Rating": "1",
+                "Speciality": "Burgers",
+                "ReviewsCount": "1290",
+                "Address": "USA",
+                "HoursOfOperation": "9.00am-6:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "frankie.com",
+                "photos": "Repositories/picjumbo.com_foodiesfeed.com_DSC_0004.jpg"
+              },
+              {
+                "Name": "McRoyal",
+                "Rating": "1",
+                "Address": "USA",
+                "HoursOfOperation": "9.00am -8:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "mcroyal.com"
+              }
+            ]
+          },
+          {
+            "Dish": "Traditional American Dessert",
+            "Status": "Incomplete",
+            "photos": "Repositories/picjumbo.com_foodiesfeed.com_DSC_0004.jpg",
+            "RestaurantList": [
+              {
+                "Name": "Apple Pie Joe's",
+                "Rating": "5",
+                "Speciality": "Burgers",
+                "ReviewsCount": "1290",
+                "Address": "ABC road",
+                "HoursOfOperation": "9.00am -6:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "applepiejoe.com",
+                "photos": "../Repositories/[FoodieChallenge]Asset (16).png"
+              },
+              {
+                "Name": "Apple Pie Mary's",
+                "Rating": "4",
+                "Address": "XYZ road",
+                "HoursOfOperation": "9.00am -8:00pm",
+                "Phone": "(454) 456-4564",
+                "website": "applepiemary.com"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Cuisine": "Italian",
+        "Description": "One characteristic of Italian cooking is the fusion of mulitple ethnic or regional approaches into completely new cooking styles.",
+        "Status": 0,
+        "Duration": "Duration: 2 weeks",
+        "Dishes": [
+          {
+            "Dish": "All-Italian Bacon Chees Burger",
+            "Status": "Incomplete",
+            "photos": "Repositories/picjumbo.com_foodiesfeed.com_DSC_0004.jpg",
+            "RestaurantList": [
+              {
+                "Name": "Frankie",
+                "Rating": "4",
+                "Address": "ABC road",
+                "Speciality": "Burgers",
+                "ReviewsCount": "1290",
+                "HoursOfOperation": "9.00am -6:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "frankie.com",
+                "photos": "Repositories/picjumbo.com_foodiesfeed.com_DSC_0004.jpg"
+              },
+              {
+                "Name": "McRoyal",
+                "Rating": "4",
+                "Address": "XYZ road",
+                "HoursOfOperation": "9.00am -8:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "mcroyal.com"
+              }
+            ]
+          },
+          {
+            "Dish": "Traditional Italian Dessert",
+            "Status": "Completed",
+            "RestaurantList": [
+              {
+                "Name": "Apple Pie Joe's",
+                "Rating": "4",
+                "Speciality": "Burgers",
+                "ReviewsCount": "1290",
+                "Address": "ABC road",
+                "HoursOfOperation": "9.00am -6:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "applepiejoe.com"
+              },
+              {
+                "Name": "Apple Pie Mary's",
+                "Rating": "4",
+                "Address": "XYZ road",
+                "HoursOfOperation": "9.00am -8:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "applepiemary.com"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Cuisine": "Mexican",
+        "Description": "One characteristic of Mexican cooking is the fusion of mulitple ethnic or regional approaches into completely new cooking styles.",
+        "Status": 0,
+        "Duration": "Duration: 1 week",
+        "Dishes": [
+          {
+            "Dish": "All-Mexican Bacon Chees Burger",
+            "Status": "Incomplete",
+            "photos": "Repositories/picjumbo.com_foodiesfeed.com_DSC_0004.jpg",
+            "RestaurantList": [
+              {
+                "Name": "Frankie",
+                "Rating": "4",
+                "Address": "ABC road",
+                "Speciality": "Burgers",
+                "ReviewsCount": "1290",
+                "HoursOfOperation": "9.00am -6:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "frankie.com",
+                "photos": "Repositories/picjumbo.com_foodiesfeed.com_DSC_0004.jpg"
+              },
+              {
+                "Name": "McRoyal",
+                "Rating": "4",
+                "Address": "XYZ road",
+                "HoursOfOperation": "9.00am -8:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "mcroyal.com"
+              }
+            ]
+          },
+          {
+            "Dish": "Traditional Mexican Dessert",
+            "Status": "Completed",
+            "RestaurantList": [
+              {
+                "Name": "Apple Pie Joe's",
+                "Rating": "4",
+                "Speciality": "Burgers",
+                "ReviewsCount": "1290",
+                "Address": "ABC road",
+                "HoursOfOperation": "9.00am -6:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "applepiejoe.com"
+              },
+              {
+                "Name": "Apple Pie Mary's",
+                "Rating": "4",
+                "Address": "XYZ road",
+                "HoursOfOperation": "9.00am -8:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "applepiemary.com"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Cuisine": "Japanese",
+        "Description": "One characteristic of Japanese cooking is the fusion of mulitple ethnic or regional approaches into completely new cooking styles.",
+        "Status": 0,
+        "Duration": "Duration: 3 weeks",
+        "Dishes": [
+          {
+            "Dish": "All-Japanese Bacon Chees Burger",
+            "Status": "Incomplete",
+            "photos": "Repositories/picjumbo.com_foodiesfeed.com_DSC_0004.jpg",
+            "RestaurantList": [
+              {
+                "Name": "Frankie",
+                "Rating": "4",
+                "Address": "ABC road",
+                "Speciality": "Burgers",
+                "ReviewsCount": "1290",
+                "HoursOfOperation": "9.00am -6:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "frankie.com",
+                "photos": "Repositories/picjumbo.com_foodiesfeed.com_DSC_0004.jpg"
+              },
+              {
+                "Name": "McRoyal",
+                "Rating": "4",
+                "Address": "XYZ road",
+                "HoursOfOperation": "9.00am -8:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "mcroyal.com"
+              }
+            ]
+          },
+          {
+            "Dish": "Traditional Japanese Dessert",
+            "Status": "Completed",
+            "RestaurantList": [
+              {
+                "Name": "Apple Pie Joe's",
+                "Rating": "4",
+                "Speciality": "Burgers",
+                "ReviewsCount": "1290",
+                "Address": "ABC road",
+                "HoursOfOperation": "9.00am -6:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "applepiejoe.com"
+              },
+              {
+                "Name": "Apple Pie Mary's",
+                "Rating": "4",
+                "Address": "XYZ road",
+                "HoursOfOperation": "9.00am -8:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "applepiemary.com"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+
+    "vikram": [
+      {
+        "Cuisine": "American",
+        "Description": "One characteristic of American cooking is the fusion of mulitple ethnic or regional approaches into completely new cooking styles.",
+        "Status": 0,
+        "Duration": "Duration: 3 weeks",
+        "Dishes": [
+          {
+            "Dish": "All-American Bacon Cheese Burger",
+            "Status": "Started",
+            "photos": "Repositories/picjumbo.com_foodiesfeed.com_DSC_0004.jpg",
+            "Instructions": "Go ahead and ask for ultimate Cheese Burger",
+            "Description": "Vegan pitchfork banjo, cold-pressed post ironic XOXO church-key. Salvia single-origin coffee 3 wolf moon typewriter you probably haven't heard of them freegan. Pitchfork cardigan 8-bit four loko banh mi Banksy. Pork belly meggings food truck keytar polaroid mustache, farm-to-table.",
+            "RestaurantList": [
+              {
+                "Name": "Frankies",
+                "Rating": "1",
+                "Speciality": "Burgers",
+                "ReviewsCount": "1290",
+                "Address": "USA",
+                "HoursOfOperation": "9.00am-6:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "frankie.com",
+                "photos": "Repositories/picjumbo.com_foodiesfeed.com_DSC_0004.jpg"
+              },
+              {
+                "Name": "McRoyal",
+                "Rating": "1",
+                "Address": "USA",
+                "HoursOfOperation": "9.00am -8:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "mcroyal.com"
+              }
+            ]
+          },
+          {
+            "Dish": "Traditional American Dessert",
+            "Status": "Incomplete",
+            "photos": "Repositories/picjumbo.com_foodiesfeed.com_DSC_0004.jpg",
+            "RestaurantList": [
+              {
+                "Name": "Apple Pie Joe's",
+                "Rating": "5",
+                "Speciality": "Burgers",
+                "ReviewsCount": "1290",
+                "Address": "ABC road",
+                "HoursOfOperation": "9.00am -6:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "applepiejoe.com",
+                "photos": "../Repositories/[FoodieChallenge]Asset (16).png"
+              },
+              {
+                "Name": "Apple Pie Mary's",
+                "Rating": "4",
+                "Address": "XYZ road",
+                "HoursOfOperation": "9.00am -8:00pm",
+                "Phone": "(454) 456-4564",
+                "website": "applepiemary.com"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Cuisine": "Italian",
+        "Description": "One characteristic of Italian cooking is the fusion of mulitple ethnic or regional approaches into completely new cooking styles.",
+        "Status": 0,
+        "Duration": "Duration: 2 weeks",
+        "Dishes": [
+          {
+            "Dish": "All-Italian Bacon Chees Burger",
+            "Status": "Incomplete",
+            "photos": "Repositories/picjumbo.com_foodiesfeed.com_DSC_0004.jpg",
+            "RestaurantList": [
+              {
+                "Name": "Frankie",
+                "Rating": "4",
+                "Address": "ABC road",
+                "Speciality": "Burgers",
+                "ReviewsCount": "1290",
+                "HoursOfOperation": "9.00am -6:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "frankie.com",
+                "photos": "Repositories/picjumbo.com_foodiesfeed.com_DSC_0004.jpg"
+              },
+              {
+                "Name": "McRoyal",
+                "Rating": "4",
+                "Address": "XYZ road",
+                "HoursOfOperation": "9.00am -8:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "mcroyal.com"
+              }
+            ]
+          },
+          {
+            "Dish": "Traditional Italian Dessert",
+            "Status": "Completed",
+            "RestaurantList": [
+              {
+                "Name": "Apple Pie Joe's",
+                "Rating": "4",
+                "Speciality": "Burgers",
+                "ReviewsCount": "1290",
+                "Address": "ABC road",
+                "HoursOfOperation": "9.00am -6:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "applepiejoe.com"
+              },
+              {
+                "Name": "Apple Pie Mary's",
+                "Rating": "4",
+                "Address": "XYZ road",
+                "HoursOfOperation": "9.00am -8:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "applepiemary.com"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Cuisine": "Mexican",
+        "Description": "One characteristic of Mexican cooking is the fusion of mulitple ethnic or regional approaches into completely new cooking styles.",
+        "Status": 0,
+        "Duration": "Duration: 1 week",
+        "Dishes": [
+          {
+            "Dish": "All-Mexican Bacon Chees Burger",
+            "Status": "Incomplete",
+            "photos": "Repositories/picjumbo.com_foodiesfeed.com_DSC_0004.jpg",
+            "RestaurantList": [
+              {
+                "Name": "Frankie",
+                "Rating": "4",
+                "Address": "ABC road",
+                "Speciality": "Burgers",
+                "ReviewsCount": "1290",
+                "HoursOfOperation": "9.00am -6:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "frankie.com",
+                "photos": "Repositories/picjumbo.com_foodiesfeed.com_DSC_0004.jpg"
+              },
+              {
+                "Name": "McRoyal",
+                "Rating": "4",
+                "Address": "XYZ road",
+                "HoursOfOperation": "9.00am -8:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "mcroyal.com"
+              }
+            ]
+          },
+          {
+            "Dish": "Traditional Mexican Dessert",
+            "Status": "Completed",
+            "RestaurantList": [
+              {
+                "Name": "Apple Pie Joe's",
+                "Rating": "4",
+                "Speciality": "Burgers",
+                "ReviewsCount": "1290",
+                "Address": "ABC road",
+                "HoursOfOperation": "9.00am -6:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "applepiejoe.com"
+              },
+              {
+                "Name": "Apple Pie Mary's",
+                "Rating": "4",
+                "Address": "XYZ road",
+                "HoursOfOperation": "9.00am -8:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "applepiemary.com"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Cuisine": "Japanese",
+        "Description": "One characteristic of Japanese cooking is the fusion of mulitple ethnic or regional approaches into completely new cooking styles.",
+        "Status": 0,
+        "Duration": "Duration: 3 weeks",
+        "Dishes": [
+          {
+            "Dish": "All-Japanese Bacon Chees Burger",
+            "Status": "Incomplete",
+            "photos": "Repositories/picjumbo.com_foodiesfeed.com_DSC_0004.jpg",
+            "RestaurantList": [
+              {
+                "Name": "Frankie",
+                "Rating": "4",
+                "Address": "ABC road",
+                "Speciality": "Burgers",
+                "ReviewsCount": "1290",
+                "HoursOfOperation": "9.00am -6:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "frankie.com",
+                "photos": "Repositories/picjumbo.com_foodiesfeed.com_DSC_0004.jpg"
+              },
+              {
+                "Name": "McRoyal",
+                "Rating": "4",
+                "Address": "XYZ road",
+                "HoursOfOperation": "9.00am -8:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "mcroyal.com"
+              }
+            ]
+          },
+          {
+            "Dish": "Traditional Japanese Dessert",
+            "Status": "Completed",
+            "RestaurantList": [
+              {
+                "Name": "Apple Pie Joe's",
+                "Rating": "4",
+                "Speciality": "Burgers",
+                "ReviewsCount": "1290",
+                "Address": "ABC road",
+                "HoursOfOperation": "9.00am -6:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "applepiejoe.com"
+              },
+              {
+                "Name": "Apple Pie Mary's",
+                "Rating": "4",
+                "Address": "XYZ road",
+                "HoursOfOperation": "9.00am -8:00pm",
+                "Phone": "(454) 456-4564",
+                "Website": "applepiemary.com"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

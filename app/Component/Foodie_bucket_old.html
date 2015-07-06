@@ -1,0 +1,40 @@
+<html lang="en" ng-app="myApp" ng-cloak>
+<head>
+    <style>
+        [ng\:cloak], [ng-cloak], .ng-cloak{
+            display:none !important;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="Component/Foodie_bucket.css">
+</head>
+<body>
+<div class="MainFoodieBucket" >
+<h3 style="text-align: center">Welcome! Choose a track to get started.</h3>
+<br><br>
+<div ng-controller="FoodieController" >
+    <div class="table">
+        <div class="row">
+            <div class="cell" ng-repeat="x in cuisines">
+                <a ng-click="clickable(x.countryName, x.status, x.time)">
+                    <div style="position: relative">
+                        <div class="food"></div>
+                        <div class="name1" style="width: {{x.status* 2}}"></div>
+                        <div class="name2" >
+                            <img class="avatar" src="Component/{{x.countryName}}.png">
+                            <span class="sp">{{x.countryName}}<br><p>{{x.status}} %</p></span>
+                        </div>
+                    </div>
+                </a>
+                <div class="Food_description"><p>
+                    {{x.desc}}
+                    <br/><br/>
+                    <span style="font-weight: bold;">Duration: {{x.time}}</span>
+                </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

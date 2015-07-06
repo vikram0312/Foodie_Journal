@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="StartPage/FirstPage.css">
+</head>
+<body>
+<div class="main">
+    <img src="./assets/startPage.png" alt="Apple_Pie">
+    <div class="imageText"><span class="md-display-1">Challenge Yourself</span>
+    <p>FoodieJournal makes it easy for you to embark<br>
+        on a journey to discover new cuisines.
+    </p>
+        <md-button id="getStarted" class="md-raised md-subhead">Get Started</md-button>
+    </div>
+    <div id="showMoreFloatingBanner" ng-click="accordion.toggle(0)">
+        Discover more<span class="glyphicon glyphicon-menu-down"></span>
+    </div>
+</div>
+
+<v-accordion control="accordion" class="vAccordion--default">
+    <v-pane>
+        <v-pane-header>
+        </v-pane-header>
+    <v-pane-content>
+<div id="moreContent">
+    <div>
+        <div class="more">
+            <img src="assets/More1.png">
+        </div>
+        <div>
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Explore the top 5</br>
+            international cuisines and</br>
+                &nbsp;  follow cuisine journey
+            </p>
+        </div>
+    </div>
+    <div>
+        <div class="more">
+            <img src="assets/More2.png">
+        </div>
+        <div>
+            <p>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Receive restaurant</br>
+                &nbsp;recommendations based on</br>
+            your preferences and location
+            </p>
+        </div>
+    </div>
+    <div>
+        <div class="more">
+            <img src="assets/More3.png">
+        </div>
+        <div>
+            <p>
+                &nbsp;&nbsp;Complete challenges and</br>
+            track your progress against</br>
+            your selected cuisine journey
+            </p>
+        </div>
+    </div>
+</div>
+    </v-pane-content>
+    </v-pane>
+</v-accordion>
+</body>
+</html>

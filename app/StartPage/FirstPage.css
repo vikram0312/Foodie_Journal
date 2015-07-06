@@ -1,0 +1,67 @@
+.main{
+    text-align: center;
+    position: relative;
+}
+
+.imageText{
+    position: absolute;
+    top: 25%;
+width:100%;
+}
+
+.main img{
+    position: relative;
+    height: 60%;
+    width: 100%;
+    opacity: .8;
+}
+
+#moreContent{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    padding-top: 6%;
+}
+
+#moreContent div{
+    margin: auto;
+}
+
+.more{
+    background-color: tomato;
+    border-radius: 80%;
+    margin: auto;
+    text-align: center;
+    height: 40%;
+    width: 55%;
+}
+
+.more img{
+    padding : 35px;
+}
+
+#showMoreFloatingBanner
+{
+    width: 100%;
+    height: 5%;
+    background-color: black;
+    opacity: .3;
+    position: absolute;
+    position: absolute;
+    bottom: 0;
+    color: grey;
+}
+
+/*vAccordion styles*/
+.vAccordion--default v-pane-header{
+    padding: 0;
+    border-bottom: 0;
+    margin-bottom: 0;
+}
+
+#getStarted{
+    background-color: tomato;
+    color: honeydew;
+    width: 15%;
+    font-size: smaller;
+}

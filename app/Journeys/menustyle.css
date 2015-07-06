@@ -1,0 +1,376 @@
+td {
+    padding: 4px;
+}
+
+.btnstyle
+{
+    border-radius: 0;
+    color: gray;
+}
+
+.btnstylesm
+{
+    border-radius: 0;
+    background-color: #CB3729;
+    color: white;
+    border: none;
+}
+
+.btnstylesm:hover {
+    background-color: #CB3729;
+    color: white;
+    border: none;
+}
+
+.btnstyle:hover{
+    background-color: #CB3729;
+    color: white;
+    border: none;
+}
+
+.btnstyle:focus,
+.btnstyle.focus {
+    background-color: #CB3729;
+    color: white;
+    border: none;
+}
+#mainDiv
+{
+    border: none;
+    height: 20em;
+}
+
+#heading
+{
+    font-size: 1.5em;
+    color: black;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#desc
+{
+    font-size: 1em;
+    color: darkgray;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#txt1
+{
+    padding-top: 3em;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 2em;
+}
+
+#txt2
+{
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+}
+
+#txt3
+{
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: white;
+    font-size: 1em;
+    position: relative;
+}
+
+#bottomdiv
+{
+    background-color: black;
+    opacity: 0.6;
+    height: 1.6em;
+    margin-top: 4em;
+}
+#btnstrt
+{
+    border-radius: 0;
+    background-color: #CB3729;
+    color: white;
+    border: none;
+    margin-left: 32em;
+    margin-top: 2em;
+}
+
+
+@media screen and (max-width: 414px) {
+
+    #btnstrt
+    {
+        margin-left: 10em;
+        margin-top: 2em;
+    }
+    #bottomdiv
+    {
+        margin-top: 7.5em;
+    }
+}
+
+#googleMap1
+{
+    height:20em;
+    margin-top: -20em;
+}
+
+#mainCntainer
+{
+    margin-top: 5em;
+    margin-left: 3em;
+    background-color: white;
+    height: 35em;
+}
+
+#bdy
+{
+    background-color: gainsboro;
+}
+
+
+#foodtext
+{
+    margin-left: 1em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.5em;
+    color: white;
+}
+
+.starContainer
+{
+    margin-left: 1.4em;
+}
+
+.star{
+    width: 1em;
+}
+
+.foodtext1
+{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.8em;
+    color: white;
+}
+#framemap
+{
+    height: 20em;
+    width: 100%;
+}
+
+#badgeNumber
+{
+    font-size: 18px;
+}
+#challengeName{
+    font-size: 20px;
+    margin-left: 5px;
+    margin-top: 18px;
+    color: #686868;
+}
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.badge{
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    border-radius: 50%;
+    margin-left: 15px;
+    background-color: #484848;
+}
+
+#challengeDesc
+{
+    margin-top: 15px;
+}
+
+#instruction
+{
+    font-size: 13px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    color: #686868;
+}
+
+#inst
+{
+    position: relative;
+    margin-left: 0.1em;
+    margin-top: 1em;
+}
+
+#inst1
+{
+    position: relative;
+    margin-top: 0.7em;
+}
+
+#instruction1
+{
+    font-size: 11px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #686868;
+}
+
+#call
+{
+    background-color: #f0f0f0;
+    width: 20em;
+    height: 8.5em;
+}
+#today
+{
+    font-size: 11px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #686868;
+}
+#greencontent
+{
+    font-size: 11px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: limegreen;
+}
+
+hr
+{
+    border-top: 1px solid #d0d0d0;
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+}
+
+.phoneNUrl
+{
+    font-size: 11px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #00b3ee;
+}
+
+.icon
+{
+    height: 12px;
+}
+
+.resend
+
+{
+    border-radius: 0em;
+    background-color: #f0f0f0;
+    border: none;
+    font-size: 13px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #00b3ee;
+}
+
+.previous
+{
+    margin-left: 6em;
+    border-radius: 0em;
+    border: none;
+    font-size: 13px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: white;
+    background-color: dimgrey;
+    margin-top: 1em;
+    width: 10em;
+    height:3em;
+}
+.mark
+{
+    margin-left: 6em;
+    border-radius: 0em;
+    border: none;
+    font-size: 13px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: white;
+    background-color: #CB3729;
+    margin-top: 1em;
+    width: 18em;
+    height:3em;
+}
+
+.next
+{
+    margin-left: 11em;
+    border-radius: 0em;
+    border: none;
+    font-size: 13px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: darkgray;
+    background-color: whitesmoke;
+    margin-top: 1em;
+    width: 10em;
+    height:3em;
+}
+
+#content
+{
+    margin-top: 1em;
+}
+#myCanvas
+{
+    margin-top: 2em;
+    margin-left:0.3em;
+    transform: rotate(-90deg);
+    width:190px;
+    height:105px;
+
+}
+
+.status
+{
+    font-size: 1em;
+    color: darkgray;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.btncontent
+{
+    margin-top: 1em;
+}
+
+#follow{
+
+    width: 140px;
+}
+#canvasimage
+{
+    position: absolute;
+    top: 4.5em;
+    left:7.2em;
+    z-index:1;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    #myCanvas
+    {
+        margin-top: 2em;
+        margin-left: -2.7em;
+        transform: rotate(-90deg);
+        width:150px;
+        height:90px;
+
+    }
+    #canvasimage
+    {
+        position: absolute;
+        top: 4em;
+        left:2.9em;
+        z-index:1;
+
+    }
+    .imgcuisine
+    {
+        width: 1.9em;
+        height: 1.9em;
+    }
+    #follow1{
+        height: 2.4em;
+    }
+}

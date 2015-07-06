@@ -1,0 +1,128 @@
+.avatar {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    float:left;
+    margin-left: 30%;
+    margin-top: 20%;
+}
+
+.food {
+    position: relative;
+    width: 200px;
+    height: 120px;
+    background-color: #CB3729;
+    float: left;
+    margin: 5px;
+    padding: 5px;
+}
+.name1 {
+    position: absolute;
+    width: 200px;
+    height: 120px;
+    background-color:#FE5140;
+    float: left;
+    margin: 5px;
+    padding: 5px;
+}
+.name2 {
+    position: absolute;
+    width: 200px;
+    height: 120px;
+    float: left;
+    margin: 5px;
+    padding: 5px;
+}
+
+.Food_description {
+    position: relative;
+    top: 100px;
+    width: 200px;
+    height: 100px;
+    background-color: white;
+    margin-left: 25px;
+    padding: 15px;
+    font-size: x-small;
+
+}
+
+#American {
+    position: relative;
+    margin-left: 20px;
+    margin-top: 5px;
+    width: 200px;
+    height: 25px;
+}
+
+@media screen and (min-width: 992px) {
+    #American,#Italian,#Mexican,#Japanese {
+        position: relative;
+        margin-top: 5px;
+        margin-left: 20px;
+        width: 200px;
+        height: 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #American {
+        position: relative;
+        margin-top: 5px;
+        margin-left: 20px;
+        width: 200px;
+        height: 25px;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 992px) {
+    #American {
+        position: relative;
+        margin-top: 115px;
+        margin-left: 20px;
+        width: 200px;
+        height: 25px;
+    }
+
+}
+.upperDiv
+{
+    position: relative;
+    margin-top: 120px;
+    margin-left: 20px;
+    width: 200px;
+    height: 25px;
+}
+.sp {
+    float:left;
+    margin-top: 20px;
+    color: white;
+    padding-left: 5px;
+}
+
+.MainFoodieBucket{
+    height: 65%;
+}
+
+
+.table {
+    display: table;
+    width: 100%;
+}
+.row {
+     display: table-row;
+     width: 100%;
+ }
+.cell {
+    display: table-cell;
+}
+
+.foodContent {
+    position: absolute;
+    width: 180px;
+    height: 100px;
+}
+
+
+
+

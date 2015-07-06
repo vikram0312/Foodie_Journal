@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="myApp1">
+<head>
+    <meta charset="utf-8">
+    <script src="bower_components/angular/angular.js"></script>
+    <script>
+        angular
+                .module('myApp1', [])
+                .controller('FirstController', FirstController);
+
+        FirstController.$inject = ['$http', '$scope'];
+
+        function FirstController($http, $scope) {
+            $http
+                    .get('test.json')
+                    .then(function(data) {
+                        $scope.user = data.data;
+                    });
+        }
+
+
+    </script>
+</head>
+<body>
+<div ng-controller="FirstController">
+    <ul>
+        <li ng-repeat="x in user">
+
+            {{ x.name}}
+        </li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>Journeys Details</title>
+    <link rel="stylesheet" href="journeys/journey.css">
+</head>
+<body>
+    <div class="journeyDetails" ng-controller="JourneysDetailsController" class="journeyDetails">
+        <div ng-repeat="cuisine in journeys |filter:{Cuisine:selectedJourney} ">
+            <br/>
+            <img ng-src="Repositories/[FoodieChallenge]Asset (12).png" alt="photos" width="20" height="20"/><span class="journeysNav">&nbsp;&nbsp;Journeys&nbsp;</span>/&nbsp; {{selectedJourney}}<br/><br/>
+            <div class="detailsDeck" ng-repeat="dishes in cuisine.Dishes | filter : {Dish: pendingTask}">
+                    <span ng-if="dishes.Status == 'Completed'"><img ng-src="Repositories/[FoodieChallenge]Asset (7).png" alt="photos" width="25" height="25"/></span>
+                    <span class="badge" ng-if="dishes.Status != 'Completed'">{{dishes.DishIndex}}</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;{{dishes.Dish}} &nbsp; <span ng-if="dishes.Status!='Incomplete'" class="status">{{dishes.Status}}</span>
+
+                <span ng-if="dishes.Status == 'Completed'" style="text-align: right;padding-left:390px;font-size:11px;color:gray;">Leave Feedback</span>
+                    <br/> <br/>
+                    <span><img ng-src="{{dishes.photos}}" class="dishImage" alt="photos" /></span>
+                    <span class="directions" ng-repeat="rest in dishes.RestaurantList | limitTo :1 " ng-init="mapAddress=rest.Address">
+
+                    <iframe width ="360" height="230" frameborder="0" style="border:0" ng-src= {{MapURL(mapAddress)}} allowfullscreen></iframe>
+                    </span>
+                    <div class="row">
+                        <div class="col-md-9">
+                        <span class="font11px">Instruction : {{dishes.Instructions}}</span>
+                        <br/><br/>
+                        <p class="description">{{dishes.Description}}</p>
+                        <div class="resend">Resend text notification</div>
+                        </div>
+                        <div class="col-md-3" ng-repeat="rest in dishes.RestaurantList | limitTo :1 " ng-init="mapAddress=rest.Address">
+                            <br/>
+                            <div><span class="font10px"><b>Today&nbsp;</b></span><span class="font10px colorGray">{{rest.HoursOfOperation}}</span></div>
+                            <div class="font10px clrLawnGreen">Open Now</div><hr />
+                            <div class="colourCyan font10px"><img ng-src="Repositories/FoodieChallengeAsset(14).png" alt="photos" width="10" height="10"/>&nbsp;{{rest.Phone}}</div>
+                            <div class="colourCyan font10px"><img ng-src="Repositories/[FoodieChallenge]Asset (13).png" alt="photos" width="10" height="10"/>&nbsp;{{rest.Website}}</div>
+                        </div>
+                     </div>
+                    <div>
+                        <hr/>
+                    <span><button class="navPrev btn btn-default btnstylesm" onclick="previousPage()">Previous</button></span>
+                    <span class="padding-left-130">
+                     <button ng-if="dishes.Status == 'Completed'" class="completed btn btn-default btnstylesm"><img ng-src="Repositories/[FoodieChallenge]Asset (7).png" alt="photos" width="15" height="15"/>&nbsp;Way to go! Take the next challenge</button>
+                     <button ng-if="dishes.Status == 'Started'" ng-click="markStarted('Completed')" class="markStatusComplete btn btn-default btnstylesm">Mark as Completed</button>
+                     <button ng-if="dishes.Status == 'Incomplete'" ng-click="markStarted('Started')" class="markStatusStarted btn btn-default btnstylesm">Mark as Started</button>
+                    </span>
+                    <span class="padding-left-130">
+                        <button ng-if="dishes.Status == 'Incomplete'" class="navNextDisabled btn btn-default btnstylesm" disabled="disabled">Next</button>
+                        <button ng-if="dishes.Status != 'Incomplete'" class="navNext btn btn-default btnstylesm">Next</button>
+                    </span>
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
