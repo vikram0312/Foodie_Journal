@@ -42,19 +42,30 @@
         getTaskService.setSelectedJourney(getDataService.getCountry());
         var usrnm  = $window.localStorage.getItem('username');
         $scope.fromLocalStorage = JSON.parse($window.localStorage.getItem('jsonData_'+ usrnm +'_Journey'));
-
         if(undefined !== getDataService.getCountry()) {
-            selectedCuisine = getDataService.getCountry();
-            $scope.selectedCuisine = selectedCuisine;
-            if(null !== $window.localStorage.selectedJourney) {
-                //if(selectedCuisine === $scope.fromLocalStorage.selectedJourney) {
+            //selectedCuisine = getDataService.getCountry();
+            if(null !== $window.localStorage.getItem('selectedJourney')) {
+                if ($window.localStorage.getItem('selectedCuisine') === $window.localStorage.getItem('selectedJourney')
+                && $window.localStorage.getItem('back') === 'back') {
+                    selectedCuisine = $window.localStorage.getItem('selectedCuisine');
+                    $scope.selectedCuisine = selectedCuisine;
                     $scope.status = $window.localStorage.getItem('status');
+                    $scope.duration = $window.localStorage.getItem('duration');
+                    $window.localStorage.removeItem("back");
                 }
-                else{
+                else {
+                    selectedCuisine = getDataService.getCountry();
+                    $scope.selectedCuisine = selectedCuisine;
                     $scope.status = getDataService.getStatus();
+                    $scope.duration = getDataService.getDuration();
                 }
+            }else{
+                selectedCuisine = getDataService.getCountry();
+                $scope.selectedCuisine = selectedCuisine;
+                $scope.status = getDataService.getStatus();
+                $scope.duration = getDataService.getDuration();
+            }
 
-            $scope.duration = getDataService.getDuration();
             $window.localStorage.removeItem("selectedCuisine");
             $window.localStorage.removeItem("status");
             $window.localStorage.removeItem("duration");

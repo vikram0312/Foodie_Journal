@@ -14,6 +14,7 @@
                 $window.localStorage.setItem('pendingTask', $scope.pendingTask);
                 $window.localStorage.setItem('selectedJourney', $scope.selectedJourney );
                 $window.localStorage.setItem('dishIndex', $scope.dishIndex);
+                $window.localStorage.setItem('back', 'back');
         }else{
             $scope.pendingTask = $window.localStorage.getItem('pendingTask');
             $scope.selectedJourney = $window.localStorage.getItem('selectedJourney');
