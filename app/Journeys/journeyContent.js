@@ -136,9 +136,11 @@
             getjourneysService.getData().then(function (data) {
                 $scope.journeysData = data.data;
                 angular.forEach($scope.journeysData.users, function (value, key) {
-                    $scope.journeys = value;
-                    var dataToStore = JSON.stringify($scope.journeys);
-                    $window.localStorage.setItem('jsonData_' + usrnm + '_Journey', dataToStore);
+                    if (key === usrnm) {
+                        $scope.journeys = value;
+                        var dataToStore = JSON.stringify($scope.journeys);
+                        $window.localStorage.setItem('jsonData_' + usrnm + '_Journey', dataToStore);
+                    }
                 });
             });
         }

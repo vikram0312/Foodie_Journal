@@ -41,7 +41,8 @@
             $scope.Logout = function(){
                 $window.localStorage.removeItem('username');
                 $scope.isAuthenticated = false;
-                history.go(-(history.length - 1));
+                //history.go(-(history.length - 1));
+                $location.path('/');
             }
         $scope.Authenticate = function (username , password) {
 

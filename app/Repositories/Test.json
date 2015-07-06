@@ -8,7 +8,7 @@
         "Duration": "Duration: 3 weeks",
         "Dishes": [
           {
-            "Dish": "All-American Bacon Cheese Burger",
+            "Dish": "All-American Bacon Cheese Burger1234",
             "Status": "Started",
             "photos": "Repositories/picjumbo.com_foodiesfeed.com_DSC_0004.jpg",
             "Instructions": "Go ahead and ask for ultimate Cheese Burger",
@@ -243,7 +243,7 @@
     {
       "Cuisine": "American",
       "Description": "One characteristic of American cooking is the fusion of mulitple ethnic or regional approaches into completely new cooking styles.",
-      "Status": 10,
+      "Status": 20,
       "Duration": "Duration: 3 weeks",
       "Dishes": [
         {
