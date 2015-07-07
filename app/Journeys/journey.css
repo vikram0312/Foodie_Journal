@@ -112,16 +112,6 @@ a:focus {
     padding-left:3%;
     padding-top:2%;
 }
-
-/*#navButtons td{
-    color: #fff3f6;
-    background-color: #8e8e8e;
-}*/
-/*
-@font-face {
-    font-family: MyFont;
-    src: url('../fonts/ProximaNova-LightItalic.otf');
-}*/
 .navPrev{
     width: 120px;
     float: left;

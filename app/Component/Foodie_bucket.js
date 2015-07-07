@@ -1,6 +1,4 @@
 'use strict';
-
-/*angular.module('myApp', []);*/
 angular
     .module('myApp')
     .controller('FoodieController', FoodieController)
@@ -14,7 +12,6 @@ function FoodieController($http, $scope, getDataService, Authenticator, $locatio
 
     if($scope.fromLocalStorage !== null && $scope.fromLocalStorage !== undefined) {
         $scope.cuisines = $scope.fromLocalStorage;
-        //$scope.cuisines = value;
         $scope.clickable = function (country, status, duration) {
             getDataService.setCountry(country);
             getDataService.setStatus(status);
@@ -29,7 +26,6 @@ function FoodieController($http, $scope, getDataService, Authenticator, $locatio
                 if (key === Authenticator.getUsername()) {
                     $scope.cuisines = value;
                     var dataToStore = JSON.stringify($scope.cuisines);
-                    //$window.localStorage.clear();
                     $window.localStorage.setItem('jsonData_' + usrname, dataToStore);
                 }
             });

@@ -84,9 +84,6 @@
                     if(keepGoing) {
                         if ((key.name === username) && key.password === password) {
                             $scope.isAuthenticated = true;
-
-
-                            ////////
                             $scope.fromLocalStorage = JSON.parse($window.localStorage.getItem('jsonData_'+username+'_Journey'))
                             if($scope.fromLocalStorage !== null && $scope.fromLocalStorage !== undefined) {
                                 $scope.journeys = $scope.fromLocalStorage

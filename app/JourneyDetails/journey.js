@@ -26,17 +26,14 @@
 
         if($scope.fromLocalStorage !== null && $scope.fromLocalStorage !== undefined) {
             $scope.journeys = $scope.fromLocalStorage;
-            //alert($scope.journeys)
         }
 
         $scope.fromLocalStorage2 = JSON.parse($window.localStorage.getItem('jsonData_'+usrnm))
         if($scope.fromLocalStorage2 !== null && $scope.fromLocalStorage2 !== undefined) {
             $scope.cuisines  = $scope.fromLocalStorage2;
-            //alert($scope.cuisines);
         }
 
             $scope.range = new Array(5);
-            //$scope.selectedCuisine ="American";
             $scope.MapURL=function(address){
                 var preMapURL ="https://www.google.com/maps/embed/v1/place?key=AIzaSyDeesusO5tFgcZ-HET_3hFKfuZtfxNprCk&q="+address;
                 return $sce.trustAsResourceUrl(preMapURL);
@@ -48,7 +45,6 @@
             }
             if($scope.fromLocalStorage2 !== null && $scope.fromLocalStorage2 !== undefined) {
                 $scope.cuisines  = $scope.fromLocalStorage2;
-                //alert($scope.journeys)
             }
             if( a === 'Started'){
                 angular.forEach($scope.journeys, function(key) {

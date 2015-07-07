@@ -3,38 +3,10 @@
     angular
         .module('myApp')
         .controller('JourneyController',JourneyController)
-        /*.factory('getTaskService',getTaskService)*/
         .service('getjourneysService' , function($http){
             this.getData = function() {
                 return $http.get('Repositories/foodie-journal.json')
             }});
-/*
-                function getTaskService(){
-                    var task;
-                    var index;
-                    var selectedJourney;
-                    return{
-                        setIndex:function(value){
-                            index=value;
-                        },
-                        getIndex:function(){
-                            return index;
-                        },
-                        setSelectedJourney:function(value){
-                            selectedJourney=value;
-                        },
-                        getSelectedJourney:function(){
-                            return selectedJourney;
-                        },
-                        setTask: function (value) {
-                            task = value;
-                        },
-                        getTask: function () {
-                            return task;
-                        }
-                    }
-
-                }*/
 
     function JourneyController($http, $scope, $interval,getDataService,$sce,$window, getjourneysService, getTaskService, $location){
         JourneyController.$inject = ['$http','$scope', '$interval','getDataService','$sce','$window','getjourneysService', 'getTaskService', '$location'];
@@ -43,7 +15,6 @@
         var usrnm  = $window.localStorage.getItem('username');
         $scope.fromLocalStorage = JSON.parse($window.localStorage.getItem('jsonData_'+ usrnm +'_Journey'));
         if(undefined !== getDataService.getCountry()) {
-            //selectedCuisine = getDataService.getCountry();
             if(null !== $window.localStorage.getItem('selectedJourney_'+usrnm)) {
                 if ($window.localStorage.getItem('selectedCuisine') === $window.localStorage.getItem('selectedJourney_'+usrnm)
                 && $window.localStorage.getItem('back') === 'back') {
