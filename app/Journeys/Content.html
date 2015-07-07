@@ -53,14 +53,14 @@
         <div class="col-sm-2 hidden-xs hidden-sm btncontent">
             <input type="button" class="btn btn-default btnstyle" value="{{ duration }}" disabled="disabled"/><br/><br/>
             <input ng-if="status == '0'" type="button" ng-click="followCuisine()" class="btn btn-default btnstylesm" value="Follow" id="follow"/>
-            <input ng-if="status != '0'" type="button" ng-click="followCuisine()" class="btn btn-default btnstylesm" value="Continue" id="continue"/>
+            <input ng-if="'0' != status && 100 != status" type="button" ng-click="followCuisine()" class="btn btn-default btnstylesm" value="Continue" id="continue"/>
 
         </div>
 
         <div class="row  hidden-md hidden-lg btncontent">
             <input  type="button" class="col-xs-6 btn btn-default btnstyle" value="{{ duration }}"/><br/><br/>
             <input ng-if="status == '0'" type="button" ng-click="followCuisine()" class="col-xs-6 btn btn-default btnstylesm" value="Follow" id="follow1"/>
-            <input ng-if="status != '0'" type="button" ng-click="followCuisine()" class="col-xs-6 btn btn-default btnstylesm" value="Continue" id="continue1"/>
+            <input ng-if="'0' != status && 100 != status" type="button" ng-click="followCuisine()" class="col-xs-6 btn btn-default btnstylesm" value="Continue" id="continue1"/>
         </div>
     </div>
     <div ng-repeat="cuisine in journeys | filter: {Cuisine:selectedCuisine} ">

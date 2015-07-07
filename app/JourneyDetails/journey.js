@@ -2,25 +2,26 @@
         .module('myApp')
         .controller('JourneysDetailsController', JourneysDetailsController)
 
-    function JourneysDetailsController($http,$scope,$sce,getTaskService,$window){
-            JourneysDetailsController.$inject = ['$http', '$scope','$sce','getTaskService','$window'];
+    function JourneysDetailsController($http,$scope,$sce,getTaskService,$window,$location){
+            JourneysDetailsController.$inject = ['$http', '$scope','$sce','getTaskService','$window','$location'];
+        var usrnm  = $window.localStorage.getItem('username');
         if(undefined !== getTaskService.getSelectedJourney()) {
                 $scope.pendingTask = getTaskService.getTask();
                 $scope.selectedJourney = getTaskService.getSelectedJourney();
                 $scope.dishIndex = getTaskService.getIndex();
                 $window.localStorage.removeItem("pendingTask");
-                $window.localStorage.removeItem("selectedJourney");
+                $window.localStorage.removeItem("selectedJourney_"+usrnm);
                 $window.localStorage.removeItem("dishIndex");
                 $window.localStorage.setItem('pendingTask', $scope.pendingTask);
-                $window.localStorage.setItem('selectedJourney', $scope.selectedJourney );
+                $window.localStorage.setItem('selectedJourney_'+usrnm, $scope.selectedJourney );
                 $window.localStorage.setItem('dishIndex', $scope.dishIndex);
                 $window.localStorage.setItem('back', 'back');
         }else{
             $scope.pendingTask = $window.localStorage.getItem('pendingTask');
-            $scope.selectedJourney = $window.localStorage.getItem('selectedJourney');
+            $scope.selectedJourney = $window.localStorage.getItem('selectedJourney_'+usrnm);
             $scope.dishIndex = $window.localStorage.getItem('dishIndex');
         }
-        var usrnm  = $window.localStorage.getItem('username');
+
         $scope.fromLocalStorage = JSON.parse($window.localStorage.getItem('jsonData_'+usrnm+'_Journey'))
 
         if($scope.fromLocalStorage !== null && $scope.fromLocalStorage !== undefined) {
@@ -100,8 +101,7 @@
             }
 
         }
-    }
-
-    function previousPage(){
-        window.history.go(-1);
+        $scope.previousPage = function(){
+            $location.path('/Content');
+        }
     }

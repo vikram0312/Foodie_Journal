@@ -14,7 +14,39 @@
                 when('/JourneyDetails' ,
                 {templateUrl: 'JourneyDetails/JourneyDetails.html' , controller: JourneysDetailsController});
         }])
-    .controller('MainController', function ($http, $scope, Authenticator, $location, $window) {
+        .factory('getTaskService',getTaskService)
+        .controller('MainController', MainController )
+
+
+                function getTaskService(){
+                    var task;
+                    var index;
+                    var selectedJourney;
+                    return{
+                        setIndex:function(value){
+                            index=value;
+                        },
+                        getIndex:function(){
+                            return index;
+                        },
+                        setSelectedJourney:function(value){
+                            selectedJourney=value;
+                        },
+                        getSelectedJourney:function(){
+                            return selectedJourney;
+                        },
+                        setTask: function (value) {
+                            task = value;
+                        },
+                        getTask: function () {
+                            return task;
+                        }
+                    }
+
+                }
+
+        function MainController ($http, $scope, Authenticator, $location, $window , getTaskService){
+           // $scope.isFooter = true;
             $scope.usrnm = $window.localStorage.getItem('username');
             var keepGoing = true;
             if(($scope.usrnm) === undefined || ($scope.usrnm) === null) {
@@ -41,8 +73,8 @@
             $scope.Logout = function(){
                 $window.localStorage.removeItem('username');
                 $scope.isAuthenticated = false;
-                //history.go(-(history.length - 1));
                 $location.path('/');
+               // $scope.isFooter = true;
             }
         $scope.Authenticate = function (username , password) {
 
@@ -52,18 +84,44 @@
                     if(keepGoing) {
                         if ((key.name === username) && key.password === password) {
                             $scope.isAuthenticated = true;
-                            $location.path('/Foodie_bucket');
+
+
+                            ////////
+                            $scope.fromLocalStorage = JSON.parse($window.localStorage.getItem('jsonData_'+username+'_Journey'))
+                            if($scope.fromLocalStorage !== null && $scope.fromLocalStorage !== undefined) {
+                                $scope.journeys = $scope.fromLocalStorage
+                                $scope.selectedCuisine = $window.localStorage.getItem('selectedJourney_'+username);
+                                angular.forEach($scope.journeys, function(key, value) {
+                                    if($scope.selectedCuisine == key.Cuisine){
+                                        var putbreak = true;
+                                        angular.forEach(key.Dishes, function(key, value,count) {
+                                            if('Completed' != key.Status && key.Status == 'Started' && putbreak){
+                                                getTaskService.setTask(key.Dish);
+                                                getTaskService.setIndex(key.DishIndex);
+                                                $location.path('/JourneyDetails');
+                                                putbreak = false;
+                                            }else if(putbreak) {
+                                                $location.path('/Foodie_bucket');
+                                            }
+                                        });
+                                    }
+                                });
+                            }else {
+                                $location.path('/Foodie_bucket');
+                            }
+                            //$scope.isFooter = false;
                             Authenticator.setUsername(username);
                             $window.localStorage.setItem('username', username);
                             keepGoing = false;
                         } else {
                             $scope.isAuthenticated = false;
+                            //$scope.isFooter = true;
                         }
                     }
                 });
             });
         }
-    });
+    };
 
 
 angular.module('myApp.services', [])

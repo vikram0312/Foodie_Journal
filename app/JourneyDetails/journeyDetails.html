@@ -38,7 +38,7 @@
                      </div>
                     <div>
                         <hr/>
-                    <span><button class="navPrev btn btn-default btnstylesm" onclick="previousPage()">Previous</button></span>
+                    <span><button class="navPrev btn btn-default btnstylesm" ng-click="previousPage()">Previous</button></span>
                     <span class="padding-left-130">
                      <button ng-if="dishes.Status == 'Completed'" class="completed btn btn-default btnstylesm"><img ng-src="Repositories/[FoodieChallenge]Asset (7).png" alt="photos" width="15" height="15"/>&nbsp;Way to go! Take the next challenge</button>
                      <button ng-if="dishes.Status == 'Started'" ng-click="markStarted('Completed')" class="markStatusComplete btn btn-default btnstylesm">Mark as Completed</button>
