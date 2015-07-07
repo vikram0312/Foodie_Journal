@@ -67,7 +67,8 @@ a:focus {
 
 .journeyDetails{
     background-color: #f6f6f6;
-    padding:10%;
+    padding-left:10%;
+    padding-right: 10%;
 }
 
 .detailsDeck{
@@ -189,4 +190,22 @@ button:hover{
     background-color:tomato;
     color: #ffffff;
     border: none;
+}
+
+.provideReasonbtn{
+    width: 260px;
+    height: 40px;
+    background-color: #e2e8e4;
+    color :black;
+}
+
+.restName{
+    padding-top: 10px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.speciality{
+    color: #ffffff;
+    font-size: 12px;
 }

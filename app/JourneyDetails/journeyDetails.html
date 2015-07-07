@@ -5,52 +5,122 @@
     <link rel="stylesheet" href="journeys/journey.css">
 </head>
 <body>
-    <div class="journeyDetails" ng-controller="JourneysDetailsController" class="journeyDetails">
-        <div ng-repeat="cuisine in journeys |filter:{Cuisine:selectedJourney} ">
-            <br/>
-            <img ng-src="Repositories/[FoodieChallenge]Asset (12).png" alt="photos" width="20" height="20"/><span class="journeysNav">&nbsp;&nbsp;Journeys&nbsp;</span>/&nbsp; {{selectedJourney}}<br/><br/>
-            <div class="detailsDeck" ng-repeat="dishes in cuisine.Dishes | filter : {Dish: pendingTask}">
-                    <span ng-if="dishes.Status == 'Completed'"><img ng-src="Repositories/[FoodieChallenge]Asset (7).png" alt="photos" width="25" height="25"/></span>
-                    <span class="badge" ng-if="dishes.Status != 'Completed'">{{dishes.DishIndex}}</span>
-                    &nbsp;&nbsp;&nbsp;&nbsp;{{dishes.Dish}} &nbsp; <span ng-if="dishes.Status!='Incomplete'" class="status">{{dishes.Status}}</span>
+<div class="journeyDetails" ng-controller="JourneysDetailsController" class="journeyDetails">
+    <div ng-repeat="cuisine in journeys |filter:{Cuisine:selectedJourney} ">
+        <br/>
+        <img ng-src="Repositories/[FoodieChallenge]Asset (12).png" alt="photos" width="20" height="20"/><span class="journeysNav">&nbsp;&nbsp;Journeys&nbsp;</span>/&nbsp; {{selectedJourney}}<br/><br/>
+        <div class="detailsDeck" ng-repeat="dishes in cuisine.Dishes | filter : {Dish: pendingTask}">
+            <span ng-if="dishes.Status == 'Completed'"><img ng-src="Repositories/[FoodieChallenge]Asset (7).png" alt="photos" width="25" height="25"/></span>
+            <span class="badge" ng-if="dishes.Status != 'Completed'">{{dishes.DishIndex}}</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;{{dishes.Dish}} &nbsp; <span ng-if="dishes.Status!='Incomplete'" class="status">{{dishes.Status}}</span>
 
-                <span ng-if="dishes.Status == 'Completed'" style="text-align: right;padding-left:390px;font-size:11px;color:gray;">Leave Feedback</span>
-                    <br/> <br/>
-                    <span><img ng-src="{{dishes.photos}}" class="dishImage" alt="photos" /></span>
-                    <span class="directions" ng-repeat="rest in dishes.RestaurantList | limitTo :1 " ng-init="mapAddress=rest.Address">
+            <span ng-click="leaveFeedback()" ng-if="dishes.Status == 'Completed'" style="text-align: right;padding-left:40%;font-size:11px;color:gray;">Leave Feedback</span>
+            <br/> <br/>
 
-                    <iframe width ="360" height="230" frameborder="0" style="border:0" ng-src= {{MapURL(mapAddress)}} allowfullscreen></iframe>
-                    </span>
-                    <div class="row">
-                        <div class="col-md-9">
-                        <span class="font11px">Instruction : {{dishes.Instructions}}</span>
-                        <br/><br/>
-                        <p class="description">{{dishes.Description}}</p>
-                        <div class="resend">Resend text notification</div>
-                        </div>
-                        <div class="col-md-3" ng-repeat="rest in dishes.RestaurantList | limitTo :1 " ng-init="mapAddress=rest.Address">
-                            <br/>
-                            <div><span class="font10px"><b>Today&nbsp;</b></span><span class="font10px colorGray">{{rest.HoursOfOperation}}</span></div>
-                            <div class="font10px clrLawnGreen">Open Now</div><hr />
-                            <div class="colourCyan font10px"><img ng-src="Repositories/FoodieChallengeAsset(14).png" alt="photos" width="10" height="10"/>&nbsp;{{rest.Phone}}</div>
-                            <div class="colourCyan font10px"><img ng-src="Repositories/[FoodieChallenge]Asset (13).png" alt="photos" width="10" height="10"/>&nbsp;{{rest.Website}}</div>
-                        </div>
-                     </div>
-                    <div>
-                        <hr/>
-                    <span><button class="navPrev btn btn-default btnstylesm" ng-click="previousPage()">Previous</button></span>
-                    <span class="padding-left-130">
-                     <button ng-if="dishes.Status == 'Completed'" class="completed btn btn-default btnstylesm"><img ng-src="Repositories/[FoodieChallenge]Asset (7).png" alt="photos" width="15" height="15"/>&nbsp;Way to go! Take the next challenge</button>
-                     <button ng-if="dishes.Status == 'Started'" ng-click="markStarted('Completed')" class="markStatusComplete btn btn-default btnstylesm">Mark as Completed</button>
-                     <button ng-if="dishes.Status == 'Incomplete'" ng-click="markStarted('Started')" class="markStatusStarted btn btn-default btnstylesm">Mark as Started</button>
-                    </span>
-                    <span class="padding-left-130">
-                        <button ng-if="dishes.Status == 'Incomplete'" class="navNextDisabled btn btn-default btnstylesm" disabled="disabled">Next</button>
-                        <button ng-if="dishes.Status != 'Incomplete'" class="navNext btn btn-default btnstylesm">Next</button>
-                    </span>
+            <div class="row">
+                <div ng-repeat="rest in dishes.RestaurantList | limitTo :1" class="col-md-6" style="background-image: url('{{rest.photos}}'); background-size: auto 100%; background-repeat: round;
+                background-position: left top; width :360px; height:230px ;margin-left:25px; ">
+                                <span ng-repeat="rest in dishes.RestaurantList | limitTo :1">
+                                    <div class="restName">{{rest.Name}}</div>
+                                            <span style="margin-left:10px;" ng-repeat="i in range.slice(0,rest.Rating) track by $index">
+                                            <img ng-src="Repositories/[FoodieChallenge]Asset (9).png" alt="photos" width="10" height="10"/>
+                                             </span>
+                                            <span ng-repeat="i in range.slice(0,5-rest.Rating) track by $index">
+                                            <img ng-src="Repositories/[FoodieChallenge]Asset (10).png" alt="photos" width="10" height="10"/>
+                                            </span>
+                                          <span style="color: white;font-size: 12px"> &nbsp;&nbsp;{{rest.ReviewsCount}} reviews</span>
+                                    <div class="speciality">{{rest.Speciality}}</div>
+                                </span>
+                </div>
+                <div class="col-md-6">
+                            <span class="directions" ng-repeat="rest in dishes.RestaurantList | limitTo :1 " ng-init="mapAddress=rest.Address">
+                            <iframe width ="360" height="230" frameborder="0" style="border:0" ng-src= {{MapURL(mapAddress)}} allowfullscreen></iframe>
+                            </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-9">
+                    <span class="font11px">Instruction : {{dishes.Instructions}}</span>
+                    <br/><br/>
+                    <p class="description">{{dishes.Description}}</p>
+                    <div class="resend">Resend text notification</div>
+                </div>
+                <div class="col-md-3" ng-repeat="rest in dishes.RestaurantList | limitTo :1 " ng-init="mapAddress=rest.Address">
+                    <br/>
+                    <div><span class="font10px"><b>Today&nbsp;</b></span><span class="font10px colorGray">{{rest.HoursOfOperation}}</span></div>
+                    <div class="font10px clrLawnGreen">Open Now</div><hr />
+                    <div class="colourCyan font10px"><img ng-src="Repositories/FoodieChallengeAsset(14).png" alt="photos" width="10" height="10"/>&nbsp;{{rest.Phone}}</div>
+                    <div class="colourCyan font10px"><img ng-src="Repositories/[FoodieChallenge]Asset (13).png" alt="photos" width="10" height="10"/>&nbsp;{{rest.Website}}</div>
+                </div>
+            </div>
+
+            <div class = "row">
+                <hr/>
+                <div class = "col-md-4 col-xs-12 col-sm-4"><button class="navPrev btn btn-default btnstylesm hidden-xs hidden-sm" ng-click="previousPage()">Previous</button></div>
+                <div class="col-md-4 col-xs-12 col-sm-4">
+                    <button ng-if="dishes.Status == 'Completed'" class="completed btn btn-default btnstylesm"><img ng-src="Repositories/[FoodieChallenge]Asset (7).png" alt="photos" width="15" height="15"/>&nbsp;Way to go! Take the next challenge</button>
+                    <button ng-if="dishes.Status == 'Started'" ng-click="markStarted('Completed')" class="markStatusComplete btn btn-default btnstylesm">Mark as Completed</button>
+                    <button ng-if="dishes.Status == 'Incomplete'" ng-click="markStarted('Started')" class="markStatusStarted btn btn-default btnstylesm">Mark as Started</button>
+                    <button ng-if="dishes.Status == 'Missed'" ng-click="openDialog()" class="provideReasonbtn btn btn-default btnstylesm">Provide Reason</button>
+                </div>
+                <div class="col-md-4 col-sm-4 hidden-xs" >
+                    <button ng-if="dishes.Status != 'Completed'" class="navNextDisabled btn btn-default btnstylesm" disabled="disabled">Next</button>
+                    <button ng-if="dishes.Status == 'Completed'" ng-click="next()" class="navNext btn btn-default btnstylesm">Next</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <br/>
+                <center><h4 class="modal-title" id="myModalLabel">You ran out of time!</h4></center>
+                <br/>
+                <div id="modalContent">
+                    <center>  <span>This challenge will appear as missed.</span><br/>
+                        <span>Please provide a reason to be able to start again.</span></center>
+                    <br/>
+                    <div class="form-group">
+                        <textarea style="width: 90%; margin-left: 2em; margin-right: 2em;" class="form-control" rows="5" placeholder="Type your message..." ng-model="Reason"></textarea>
                     </div>
+                    <br/>
+                    <div class="row" style="margin-left: 1em;">
+                        <input  type="button" ng-click="doItLater()" class="col-xs-4 col-xs-offset-1 btn btn-default btnstyle" data-dismiss="modal" value="Do it Later"/>
+                        <input  type="button" ng-click="send()" ng-disabled = "!Reason" class="col-xs-4 col-xs-offset-1 btn btn-default btnstylesm" data-dismiss="modal" value="Send"/>
+                        <br/><br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div>
+                    <br/>
+                    <center>  <span><b>Your feedback is important !!!</b></span></center>
+                    <center>  <span><b>Please provide feedback!</b></span></center>
+
+                    <br/>
+                    <div class="form-group">
+                        <textarea style="width: 36em;margin-left: 2em;" class="form-control" rows="5" placeholder="Type your message..." ng-model="feedback"></textarea>
+                    </div>
+                    <br/>
+                    <div class="row" style="margin-left: 1em;">
+                        <input  type="button" ng-click="doItLater()" class="col-xs-4 col-xs-offset-1 btn btn-default btnstyle" data-dismiss="modal" value="Do it Later"/>
+                        <input  type="button" ng-click="submitFeedback()" ng-disabled = "!feedback" class="col-xs-4 col-xs-offset-1 btn btn-default btnstylesm" data-dismiss="modal" value="Submit"/>
+                        <br/>
+                        <br/>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>

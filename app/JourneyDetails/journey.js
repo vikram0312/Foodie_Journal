@@ -39,6 +39,31 @@
                 return $sce.trustAsResourceUrl(preMapURL);
             }
 
+        $scope.openDialog = function(){
+            $("#myModal").modal().show();
+        }
+
+        var timer;
+        function timeOut(){
+            timer =  setTimeout(function () {
+                angular.forEach($scope.journeys, function(key) {
+                    if($scope.selectedJourney == key.Cuisine){
+                        var putbreak = true;
+                        angular.forEach(key.Dishes, function(key) {
+                            if(key.Dish === $scope.pendingTask) {
+                                key.Status = 'Missed';
+                                var dataToStore = JSON.stringify($scope.journeys);
+                                $window.localStorage.setItem('jsonData_' + usrnm + '_Journey', dataToStore);
+                                putbreak = false;
+                            }
+                        });
+                    }
+                });
+                $("#myModal").modal().show();
+            }, 10000);
+
+        }
+
         $scope.markStarted=function(a) {
             if($scope.fromLocalStorage !== null && $scope.fromLocalStorage !== undefined) {
                 $scope.journeys = $scope.fromLocalStorage;
@@ -60,8 +85,10 @@
                         });
                     }
                 });
+                timeOut();
 
             }else if(a === 'Completed'){
+                clearTimeout(timer);
                 var count = 0;
                 angular.forEach($scope.journeys, function(key) {
                     if($scope.selectedJourney == key.Cuisine){
@@ -78,13 +105,13 @@
                             }
                         });
 
-                        key.Status = 50*count;
+                        key.Status = 20*count;
                         var dataToStore = JSON.stringify($scope.journeys);
                         $window.localStorage.setItem('jsonData_' + usrnm + '_Journey', dataToStore);
 
                         for(var i =0;i<$scope.cuisines.length;i++){
                             if ($scope.cuisines[i].countryName === key.Cuisine) {
-                                $scope.cuisines[i].status =  50*count;
+                                $scope.cuisines[i].status =  20*count;
                                 var dataToStore = JSON.stringify($scope.cuisines);
                                 $window.localStorage.setItem('jsonData_' + usrnm, dataToStore);
                                 $window.localStorage.removeItem("status");
@@ -95,7 +122,48 @@
                 });
 
             }
+        }
 
+
+        $scope.send = function(){
+            angular.forEach($scope.journeys, function(key) {
+                if($scope.selectedJourney == key.Cuisine){
+                    var putbreak = true;
+                    angular.forEach(key.Dishes, function(key) {
+                        if(key.Dish === $scope.pendingTask) {
+                            key.Status = 'Incomplete';
+                            var dataToStore = JSON.stringify($scope.journeys);
+                            $window.localStorage.setItem('jsonData_' + usrnm + '_Journey', dataToStore);
+                            putbreak = false;
+                        }
+                    });
+                }
+            });
+        }
+        $scope.leaveFeedback = function (){
+            $("#feedbackModal").modal().show();
+        }
+        $scope.next = function (){
+            $scope.selectedCuisine = $window.localStorage.getItem('selectedCuisine');
+            $scope.fromLocalStorage = JSON.parse($window.localStorage.getItem('jsonData_'+usrnm+'_Journey'))
+            if($scope.fromLocalStorage !== null && $scope.fromLocalStorage !== undefined) {
+                $scope.journeys = $scope.fromLocalStorage
+                angular.forEach($scope.journeys, function(key, value) {
+                    if($scope.selectedCuisine == key.Cuisine && 100!= key.Status){
+                        var putbreak = true;
+                        angular.forEach(key.Dishes, function(dishKey, value,count) {
+                            if('Completed' != dishKey.Status && putbreak){
+                                $window.localStorage.setItem('pendingTask', dishKey.Dish);
+                                $window.localStorage.setItem('dishIndex', dishKey.DishIndex);
+                                putbreak = false;
+                                location.reload();
+                            }
+                        });
+                    }else if($scope.selectedCuisine == key.Cuisine && 100== key.Status){
+                        alert('Congratulations!!! You have completed all the task of current journey. Please go back and select other cuisine.');
+                    }
+                });
+            }
         }
         $scope.previousPage = function(){
             $location.path('/Content');
